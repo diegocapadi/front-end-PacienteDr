@@ -1,0 +1,38 @@
+<h2>Crear Doctor</h2>
+
+<form (submit)="guardarCambiosDr()" [formGroup]="formDr">
+    <!-- <mat-label style="color: red;">No usar acentos ó ñ:</mat-label> -->
+    <br/>
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre-Completo*</mat-label>
+        <input matInput  formControlName="nombre" />
+        <mat-error *ngIf="formDr.invalid">{{GetErrorFieldNombre()}} </mat-error>
+    </mat-form-field>
+    <br/>
+    <mat-form-field appearance="outline">
+        <mat-label>Especialidad*</mat-label>
+        <input formControlName="especialidad" matInput #ssn/>
+        <mat-error>Solo Letras y requerido</mat-error>
+    </mat-form-field>
+    <br/>
+    <mat-form-field appearance="outline">
+        <mat-label>Num-Credencial*</mat-label>
+        <input formControlName="numCredencial" matInput/>
+        <mat-error>Solo Números y requerido</mat-error>
+    </mat-form-field>
+    <br/>
+    <mat-form-field appearance="outline">
+        <mat-label>Hospital*</mat-label>
+        <input formControlName="hospital" matInput/>
+        <mat-error>Solo Letras y requerido</mat-error>
+    </mat-form-field>
+    <br/>
+
+    <div>
+        <button mat-flat-button color="primary" [disabled]="formDr.invalid">
+            Guardar Cambios
+        </button>
+        <a mat-stroked-button routerLink="/doctores">Cancelar</a>
+    </div>
+
+</form>

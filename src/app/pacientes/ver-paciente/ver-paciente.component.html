@@ -1,0 +1,23 @@
+<!-- <p>crear-paciente works!</p> -->
+<!-- <button mat-flat-button color="primary" (click)="guardarCambios()">Guardar Cambios</button> -->
+
+<h2>Ver Paciente</h2>
+
+<form (submit)="buscarPaciente(id.value)" [formGroup]="formVerPac">
+    
+    <br/>
+    <mat-form-field appearance="outline">
+        <mat-label>Id*</mat-label>
+        <input formControlName="id" matInput #id name="id"/>
+        <mat-error>Solo Números (max 9 digitos) y requerido</mat-error>
+    </mat-form-field>
+    <br/>
+
+    <div>
+        <button mat-flat-button color="primary" [disabled]="formVerPac.invalid">
+            Ver Paciente
+        </button>
+        <a mat-stroked-button routerLink="/pacientes">Cancelar</a>
+    </div>
+
+</form>

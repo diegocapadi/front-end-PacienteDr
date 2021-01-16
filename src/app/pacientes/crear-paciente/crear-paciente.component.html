@@ -1,0 +1,39 @@
+<!-- <p>crear-paciente works!</p> -->
+<!-- <button mat-flat-button color="primary" (click)="guardarCambios()">Guardar Cambios</button> -->
+
+<h2>Crear Paciente</h2>
+
+<form (submit)="guardarCambios()" [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre-Completo*</mat-label>
+        <input formControlName="nombre" matInput/>
+        <mat-error *ngIf="form.invalid">{{GetErrorFieldNombre()}} </mat-error>
+    </mat-form-field>
+    <br/>
+    <mat-form-field appearance="outline">
+        <mat-label>Seguro-Social*</mat-label>
+        <input formControlName="seguroSocial" matInput #ssn/>
+        <mat-error>Solo Números (max 9 digitos) y requerido</mat-error>
+    </mat-form-field>
+    <br/>
+    <mat-form-field appearance="outline">
+        <mat-label>Codigo-Postal*</mat-label>
+        <input formControlName="codigoPostal" matInput/>
+        <mat-error>Solo Números y no más de 9 dígitos</mat-error>
+    </mat-form-field>
+    <br/>
+    <mat-form-field appearance="outline">
+        <mat-label>Teléfono*</mat-label>
+        <input formControlName="telefono" matInput/>
+        <mat-error>Solo 9 Números</mat-error>
+    </mat-form-field>
+    <br/>
+
+    <div>
+        <button mat-flat-button color="primary" [disabled]="form.invalid">
+            Guardar Cambios
+        </button>
+        <a mat-stroked-button routerLink="/pacientes">Cancelar</a>
+    </div>
+
+</form>
