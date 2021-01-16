@@ -2,6 +2,7 @@ Web App client, using Angular and Asp.net Core, connecting Patients with medical
 Web-App client (Front-End), usando Angularque crea pacientes y los asocia a doctores usando acciones CRUD ejecutadas en una database (base de datos).
 Este Web-App se conecta a un WebAPI app que tiene su código en este repositorio: https://github.com/diegocapadi/WebAPI_PacientesYdoctores
 
+########Bellow was code genereted#############
 
 # FrontEndPacienteDr
 
